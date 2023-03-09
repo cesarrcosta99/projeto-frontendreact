@@ -7,3 +7,6 @@ function Filtro(){
         </div>
     )
 }
+
+
+export default Filtro
