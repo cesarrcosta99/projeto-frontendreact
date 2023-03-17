@@ -1,15 +1,29 @@
 import React from "react";
-import Home from "./Componentes/Home/Home";
-import Filtro from "./Componentes/Filtro/Filtro";
-import Carrinho from "./Componentes/Carrinho/Carrinho";
+import { createGlobalStyle } from "styled-components"
+import Filters from "./Componentes/Filtro/Filtro";
+import Home from "./Componentes/ProductList/Home/Home";
+import Cart from "./Componentes/ShoppingCart/Cart/Cart";
+import { ContainerGlobal } from "./styles";
+
+const GlobalStyles = createGlobalStyle`
+    *{ 
+        padding:0;
+        margin:0;
+        box-sizing:border-box;
+        font-family:"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    }
+  `
+
+
 
 function App() {
   return (
-    <div>
-      <Filtro/>
+    <ContainerGlobal>
+      <GlobalStyles/>
+      <Filters/>
       <Home/>
-      <Carrinho/>
-    </div>
+      <Cart/>
+    </ContainerGlobal>
   )
 }
 
