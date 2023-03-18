@@ -35,7 +35,7 @@ export const ProductName = styled.span`
 export const ProductPrice = styled.span`
   font-size:1.3rem;
   color:#333; 
-  padding-right:7.5em;
+  padding-right:4em;
 `
 
 export const AddToCartButton=styled.button`

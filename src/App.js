@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { createGlobalStyle } from "styled-components"
 import Filters from "./Componentes/Filtro/Filtro";
 import Home from "./Componentes/ProductList/Home/Home";
 import Cart from "./Componentes/ShoppingCart/Cart/Cart";
 import { ContainerGlobal } from "./styles";
+import { ProductList } from "./Componentes/Assents/ProductList";
+
 
 const GlobalStyles = createGlobalStyle`
     *{ 
@@ -21,7 +23,7 @@ function App() {
     <ContainerGlobal>
       <GlobalStyles/>
       <Filters/>
-      <Home/>
+      <Home productList={ProductList}/>
       <Cart/>
     </ContainerGlobal>
   )
