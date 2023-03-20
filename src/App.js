@@ -19,12 +19,18 @@ const GlobalStyles = createGlobalStyle`
 
 
 function App() {
+  const [minFilter,setMinFilter]=useState("")
+  const [maxFilter,setMaxFilter]=useState("")
+  const [searchFilter,setSearchFilter  ]=useState("")
+  const [cart,setCart]=useState([])
+  const[amount,setAmount]=useState(0)
+
   return (
     <ContainerGlobal>
       <GlobalStyles/>
-      <Filters/>
-      <Home productList={ProductList}/>
-      <Cart/>
+      <Filters minFilter={minFilter} setMinFilter={setMinFilter} maxFilter={maxFilter} setMaxFilter={setMaxFilter} searchFilter={searchFilter} setSearchFilter={setSearchFilter}/>
+      <Home productList={ProductList} amount={amount} setAmount={setAmount} cart={cart} setCart={setCart}/>
+      <Cart amount={amount} setAmount={setAmount} cart={cart} setCart={setCart}/>
     </ContainerGlobal>
   )
 }
