@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ContainerCarrinho = styled.aside`
+     background-color:beige;
     display:flex;
     flex-direction:column;
     height:70vh;
@@ -11,4 +12,5 @@ export const ContainerCarrinho = styled.aside`
     h3{
      font-size:1.3em;
     }
+    overflow-y: auto;
  `

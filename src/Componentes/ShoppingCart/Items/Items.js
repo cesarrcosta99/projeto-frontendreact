@@ -1,17 +1,49 @@
 import React from "react";
 import { ContainerItens,List,Botao } from "./styles";
 
-function Items() {
+function Items({cart,setCart,currencyBrazil}) {
+
+    const decreaseQuantity = (index) => {
+        const newCartItems = [...cart];
+        if (newCartItems[index].amount === 1) {
+            return removeItem(index)
+        } else {
+            newCartItems[index].amount -= 1;
+        }
+        setCart(newCartItems);
+    }
+    const removeItem = (index) => {
+        setCart(cart.slice(0, index).concat(cart.slice(index + 1)));
+    }
+    
+    let totalValue = 0
+    for (let prod of cart
+      ){
+       const multProds =  prod.value * prod.amount 
+       totalValue = totalValue + multProds
+    }
+    
+   
     return (
+        
         <ContainerItens>
-            <ul>
+        {cart.map((item,index)=>{
+            return(
+                <div key={index}>
+                    <ul>
                 <List>
-                    <p>1x</p>
-                    <p>Produto</p>
-                    <Botao>Remover</Botao>
+                    <p>{item.amount}</p>
+                    <p>{item.name}</p>
+                    <Botao onClick={()=>decreaseQuantity(index)}>Remover</Botao>
                 </List>
             </ul>
-            <p>Valor total:</p>
+                </div>
+            )
+        })}
+             <div className="valortotal">
+             <p>Valor total:{currencyBrazil(totalValue, true)}</p>
+             </div>
+            
         </ContainerItens>
     )
 }

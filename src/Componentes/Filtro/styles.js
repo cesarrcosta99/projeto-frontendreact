@@ -8,6 +8,7 @@ export const ContainerFiltro=styled.aside`
   border:1px solid black;
   margin:1em;
   padding:1em 0.6em;
+  background-color:antiquewhite;
 
   h3{
      font-size:1.3em;

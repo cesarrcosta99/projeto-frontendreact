@@ -5,6 +5,8 @@ export const ContainerCard=styled.div`
     flex-direction:column;
     width:58%;
     gap:3rem;
+    overflow-y: auto;
+    background-color:antiquewhite;
 `
 
 export const CardTitle=styled.div`

@@ -3,8 +3,9 @@ import styled from "styled-components";
 export const CardsContainer=styled.main`
   display:flex;
   flex-wrap:wrap;
-  justify-content:center;
   gap:2rem;
+  overflow-y: auto;
+  
 `
 
 export const CardContainer = styled.div`
@@ -13,9 +14,9 @@ export const CardContainer = styled.div`
   border-radius:10px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   align-items:center; 
-  overflow:hidden;
+  /* overflow:hidden; */
   max-width:25vw;
-
+  
 `
 
 export const CardImage = styled.img`
